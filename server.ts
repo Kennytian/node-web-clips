@@ -4,7 +4,7 @@ const path = require('path');
 
 const host = 'http://192.168.66.124';
 const port = 3000;
-const fileName = 'Kenny.mobileconfig';
+const fileName = 'Kenny_signed.mobileconfig';
 
 http.createServer((req, res) => {
   if(req.url === '/') {
