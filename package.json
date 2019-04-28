@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "run": "nodemon ./server.ts http://192.168.66.124:3000"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^11.13.8",
+    "nodemon": "^1.18.11"
+  }
+}
