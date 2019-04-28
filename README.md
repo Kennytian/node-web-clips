@@ -84,11 +84,34 @@ iPhone 连上 Mac 电脑后，手机上会弹出「信任」的弹框，选择�
 
 对，我们在Web Clips 的配置里勾选了 `Precomposed Icon`。
 
-### 2.4 描述文件分发
+### 2.4 描述文件签名
+
+#### 2.4.1 没有 Domain SSL 证书的签名
+执行如下命令：
+>openssl req -x509 -newkey rsa:2048 -keyout my.pem -out signer.pem -days 3650 -nodes
+
+会提示让我们填写签名的公司信息，可参考如下：
+- Country Name (2 letter code) []:`CN`
+- State or Province Name (full name) []:`Hubei`
+- Locality Name (eg, city) []:`Wuhan`
+- Organization Name (eg, company) []:`Kenny Group`
+- Organizational Unit Name (eg, section) []:`Mobile Department`
+- Common Name (eg, fully qualified host name) []:`192.168.1.5`
+- Email Address []:`保密@gmail.com`
+
+接下来，我们还需要执行一个命令（我已将`Kenny锅.mobileconfig`改为`Kenny.mobileconfig`）：
+
+>openssl smime -sign -in Kenny.mobileconfig -out Kenny_signed.mobileconfig -signer signer.pem -inkey my.pem -outform der -nodetach
+
+#### 2.4.2 有Domain SSL 证书的签名
+
+TODO...
+
+### 2.5 描述文件分发
 
 描述文件分发就得部署到服务器上了，那我们就用 Node.js 来做吧。
 
-创建一个 `web-clips-server.ts` 文件，将如下代码复制并保存，然后将 `Kenny.mobileconfig` 文件放在同目录下。
+创建一个 `web-clips-server.ts` 文件，将如下代码复制并保存，然后将 `Kenny_signed.mobileconfig` 文件放在同目录下。
 
 ```
 const http = require('http');
@@ -97,7 +120,7 @@ const path = require('path');
 
 const host = 'http://192.168.1.5';
 const port = 3000;
-const fileName = 'Kenny.mobileconfig';
+const fileName = 'Kenny_signed.mobileconfig';
 
 http.createServer((req, res) => {
   if(req.url === '/') {
@@ -124,8 +147,5 @@ console.log(`Server running at ${host}:${port}`);
 
 让其它要下载的描述文件的用户访问地址，如：http://192.168.1.5:3000/download
 
-### 2.5 描述文件签名
-
-关于描述文件签名，请参考：https://www.jianshu.com/p/2ab0945823d8
-
-本文完！
+参考文档：
+- https://www.jianshu.com/p/2ab0945823d8
