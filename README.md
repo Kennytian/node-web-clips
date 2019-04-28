@@ -68,7 +68,7 @@ iPhone 连上 Mac 电脑后，手机上会弹出「信任」的弹框，选择�
 
 ![](https://upload-images.jianshu.io/upload_images/16119129-c7b16894c29bb34f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-`先别点`「Stop」或 「Skip Profile」按钮，看看手机发生了什么？这时手机弹出让我们安装的界面，如下图所示：
+`先别点`「Stop」或 「Skip Profile」按钮，看看手机发生了什么？这时手机弹出让我们安装的界面，如下图所示（注意看签名者：`未签名`，后面我会告诉大家如何签名）：
 
 ![](https://upload-images.jianshu.io/upload_images/16119129-2289870585cb5a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -156,6 +156,25 @@ console.log(`Server running at ${host}:${port}`);
 `node web-clips-server.ts`
 
 让其它要下载的描述文件的用户访问地址，如：http://192.168.1.5:3000/download
+
+## 三、安装：
+
+### 3.1 允许安装
+
+![](https://upload-images.jianshu.io/upload_images/16119129-51617b40f05bcfff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+### 3.2 进行安装
+
+![](https://upload-images.jianshu.io/upload_images/16119129-088659b17d810394.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+### 3.3 完成安装
+
+![](https://upload-images.jianshu.io/upload_images/16119129-8b4a31f357e8f853.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## 四、总结
+到此为止，我们完成了Web Clips 的配置基本信息、配置 Web Clips 信息、签名配置文件、配置描述文件、部署分发描述（自建Node.js 下载服务）等完整实战流程。
+
+希望对大家有帮忙，让大家少走弯路！
 
 参考文档：
 - https://www.jianshu.com/p/2ab0945823d8
