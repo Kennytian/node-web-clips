@@ -69,6 +69,7 @@ iPhone 连上 Mac 电脑后，手机上会弹出「信任」的弹框，选择�
 ![](https://upload-images.jianshu.io/upload_images/16119129-c7b16894c29bb34f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 `先别点`「Stop」或 「Skip Profile」按钮，看看手机发生了什么？这时手机弹出让我们安装的界面，如下图所示：
+
 ![](https://upload-images.jianshu.io/upload_images/16119129-2289870585cb5a1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 在手机上点击`安装`，`下一步` 之类的操作，直到安装完成，就是出来如下图所示的描述文件。
@@ -80,6 +81,7 @@ iPhone 连上 Mac 电脑后，手机上会弹出「信任」的弹框，选择�
  ![](https://upload-images.jianshu.io/upload_images/16119129-0634a7d77b9fe14c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 我们点一下 `Kenny锅盖`这个「APP」，打开了锅盖的百度百科，按手机 Home 键，这个图标怎么变了？ 
+
 ![](https://upload-images.jianshu.io/upload_images/16119129-32c6cbf3d1247392.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 对，我们在Web Clips 的配置里勾选了 `Precomposed Icon`。
