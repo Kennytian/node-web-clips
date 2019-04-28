@@ -86,9 +86,7 @@ iPhone 连上 Mac 电脑后，手机上会弹出「信任」的弹框，选择�
 
 对，我们在Web Clips 的配置里勾选了 `Precomposed Icon`。
 
-### 2.4 描述文件签名
-
-#### 2.4.1 没有 Domain SSL 证书的签名
+### 2.4 配置文件（Kenny.mobileconfig）签名
 执行如下命令：
 >openssl req -x509 -newkey rsa:2048 -keyout my.pem -out signer.pem -days 3650 -nodes
 
@@ -105,11 +103,21 @@ iPhone 连上 Mac 电脑后，手机上会弹出「信任」的弹框，选择�
 
 >openssl smime -sign -in Kenny.mobileconfig -out Kenny_signed.mobileconfig -signer signer.pem -inkey my.pem -outform der -nodetach
 
-#### 2.4.2 有Domain SSL 证书的签名
+### 2.5 描述文件签名
 
-TODO...
+打开 Apple Developer 后台，进入 https://developer.apple.com/account/ios/certificate/distribution
 
-### 2.5 描述文件分发
+下载对应的 distribution.cer 文件，然后双击安装。
+
+用 Apple Configurator 2 打开 Kenny.mobileconfig 描述配置文件，然后按如下配置：
+
+![](https://upload-images.jianshu.io/upload_images/16119129-1bbdccd4be63b1b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+选择刚刚下载的 distribution 证书，然后「Sign」完成描述文件签名，如下图所示：
+
+![](https://upload-images.jianshu.io/upload_images/16119129-9283f5cf6bb80c33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+### 2.6 描述文件分发
 
 描述文件分发就得部署到服务器上了，那我们就用 Node.js 来做吧。
 
