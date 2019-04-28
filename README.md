@@ -122,6 +122,8 @@ console.log(`Server running at ${host}:${port}`);
 
 `node web-clips-server.ts`
 
+让其它要下载的描述文件的用户访问地址，如：http://192.168.1.5:3000/download
+
 ### 2.5 描述文件签名
 
 关于描述文件签名，请参考：https://www.jianshu.com/p/2ab0945823d8
